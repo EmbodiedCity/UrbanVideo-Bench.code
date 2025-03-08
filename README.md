@@ -1,7 +1,7 @@
-# CityCog-Bench: Benchmarking Large Video-Language Models for Embodied Motion Cognition in Urban Open-Ended Spaces
+# UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces
 
 ## News
-✅ Dataset uploaded to https://huggingface.co/datasets/trainandtest666/CityCog-Bench
+✅ Dataset uploaded to https://huggingface.co/datasets/EmbodiedCity/UrbanVideo-Bench
 
 ⬜ Dataset generation code (To be completed)
 
@@ -11,7 +11,7 @@
 
 ## Introduction
 
-For more details, please visit the [project website](https://embodiedcity.github.io/citycog-bench/).
+For more details, please visit the [project website](https://embodiedcity.github.io/UrbanVideo-Bench/).
 
 
 
