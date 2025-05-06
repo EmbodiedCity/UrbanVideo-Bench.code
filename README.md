@@ -20,7 +20,7 @@ The dataset statistics are shown in the following figure b-f.
 
 ### Generation
 
-We provide three seperated scripts of Basic, Goal, and Route for generating questions with Gemini, as the workflows are slightly different due to differences in the forms of input data and features of tasks:
+We provide three seperated scripts: Basic, Goal, and Route for generating questions with Gemini, as the workflows are slightly different due to differences in the forms of input data and features of tasks:
 
 - For data consists of videos with destinations, we use the **Goal** script for the generation. This script is capable of generating question of the following categories:
    ```python
