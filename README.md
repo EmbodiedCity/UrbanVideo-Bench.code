@@ -9,7 +9,7 @@ The benchmark is designed to evaluate whether video-large language models (Video
 ## News
 ✅ Dataset Upload
 
-⬜ Dataset generation code (To be completed)
+✅ Dataset generation code (To be completed)
 
 ✅ Example code for running the benchmark with Video-LLMs
 
@@ -26,15 +26,39 @@ and place it in the `dataset` folder within the project directory.
 After downloading, ensure the folder structure matches the one described below.
 ```
 UrbanVideo-Bench.code/
+├── question_generation/      # Contains scripts for generating different categories of MCQs
+│   ├── MCQ_generation_basic.py
+│   ├── MCQ_generation_goal.py
+│   └── MCQ_generation_route.py
 ├── dataset/
-│   ├── videos/          # Contains video files used as input for the model
-│   ├── MCQ.parquet      # Contains multiple-choice questions
+│   ├── videos/               # Contains video files used as input for the model
+│   │   ├── video_list.json   # Contains names and required info of all videos
+│   │   ├── videos            # All video files
+│   │   └── ...
+│   ├── MCQ.parquet           # Contains multiple-choice questions
 │   └── ...
-├── run.py               # Script for running the model and generating predictions
-├── eval.py              # Script for evaluating the model's predictions
-├── README.md            # Documentation for the project
-└── ...                  # Other potential files or subdirectories
+├── run.py                    # Script for running the model and generating predictions
+├── eval.py                   # Script for evaluating the model's predictions
+├── README.md                 # Documentation for the project
+└── ...                       # Other potential files or subdirectories
 ```
+
+### Generation
+
+We provide three seperated scripts for generating Basic, Goal, and Route questions with Gemini, as the prompts are slightly different due to differences in tasks. However, the overall workflow remains the same. Follow the steps below to configure and execute the script:
+
+1. Set your Gemini API and select the appropriate model version.
+
+2. Configure the input and output paths:
+   - **Input Path**: Specify the folder path containing `video_list.json` and the `.MP4` videos to be processed.
+   - **Output Path**: Specify the path to the `.CSV` file where the results will be saved.
+
+3. Execute the script by running the following command in the terminal:
+   ```bash
+   python MCQ_generation_basic.py
+   ```
+   The results will be saved to the specified file.
+
 
 ### Running
 
@@ -78,7 +102,9 @@ The `eval.py` script is provided to evaluate the model's predictions. It extract
 
 *Note: The extraction method here is the simplest regular matching. However, the output of small-sized models often does not follow instructions. So it needs to be adjusted separately.*
 
+
 ## Citation
+
 If you use this project in your research, please cite the following paper:
 
 ```
