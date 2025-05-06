@@ -18,6 +18,62 @@ The pipeline includes four steps: video curation, MCQ generation, blind filterin
 The dataset statistics are shown in the following figure b-f.
 ![UrbanVideo-Bench.code](flowchart.png)
 
+### Generation
+
+We provide three seperated scripts of Basic, Goal, and Route for generating questions with Gemini, as the workflows are slightly different due to differences in the forms of input data and features of tasks:
+
+- For data consists of videos with destinations, we use the **Goal** script for the generation. This script is capable of generating question of the following categories:
+   ```python
+   question_categories = [
+      "Trajectory Captioning",
+      "Landmark Position",
+      "Goal Detection",
+      "Association",
+      "Cognitive Map",
+      "High-level Planning",
+      "Action Generation"
+   ]
+   ```
+
+- For data that include videos collected with specific movement instructions, we use the **Route** script to generate the questions. This script is capable of generating question of the following categories:
+   ```python
+   question_categories = [
+    "Progress Evaluation",
+    "Landmark Position",
+    "Action Generation"
+   ]
+   ```
+
+- For some questions in the Recall and Perception category, details from the videos are important, so we introduce an extra chain of thought in the **Basic** script, where objects and movements from the videos are extracted in advance and fed into the model for final generation. This script is capable of generating question of the following categories:
+   ```python
+   question_categories = [
+    "Trajectory Captioning",   
+    "Start/End Position",    
+    "Object Recall",    
+    "Sequence Recall",
+    "Scene Recall", 
+    "Proximity",
+    "Duration",
+    "Causal",
+    "Counterfactual"
+   ]
+   ```
+
+
+Follow the steps below to configure and execute the script:
+
+1. Set your Gemini API and select the appropriate model version.
+
+2. Configure the input and output paths:
+   - **Input Path**: Specify the folder path containing `video_list.json` and the `.MP4` videos to be processed.
+   - **Output Path**: Specify the path to the `.CSV` file where the results will be saved.
+
+3. Finally, execute the script by simply running the following command in the terminal:
+   ```bash
+   python MCQ_generation_basic.py
+   ```
+   The results will be saved to the specified file.
+
 ## Example code for running the benchmark
 ### Data Preparation
 
@@ -42,22 +98,6 @@ UrbanVideo-Bench.code/
 ├── README.md                 # Documentation for the project
 └── ...                       # Other potential files or subdirectories
 ```
-
-### Generation
-
-We provide three seperated scripts for generating Basic, Goal, and Route questions with Gemini, as the prompts are slightly different due to differences in tasks. However, the overall workflow remains the same. Follow the steps below to configure and execute the script:
-
-1. Set your Gemini API and select the appropriate model version.
-
-2. Configure the input and output paths:
-   - **Input Path**: Specify the folder path containing `video_list.json` and the `.MP4` videos to be processed.
-   - **Output Path**: Specify the path to the `.CSV` file where the results will be saved.
-
-3. Execute the script by running the following command in the terminal:
-   ```bash
-   python MCQ_generation_basic.py
-   ```
-   The results will be saved to the specified file.
 
 
 ### Running

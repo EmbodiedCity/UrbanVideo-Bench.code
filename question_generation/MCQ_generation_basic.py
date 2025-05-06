@@ -6,8 +6,8 @@ import pickle
 import json
 
 question_categories = [
-    "Captioning",   
-    "Start/End",    
+    "Trajectory Captioning",   
+    "Start/End Position",    
     "Object Recall",    
     "Sequence Recall",
     "Scene Recall", 
@@ -97,7 +97,7 @@ def make_prompt(question_category, destination, movements, object_list):
             All possible questions falls into these categories, that covers different aspects of the student's ability to understand the video content, spatial and temporal relationship and causal logic.
             
             The categories, templates and examples of Question, Choices and Answer are given respectively as follows:
-            1.  Captioning
+            1.  Trajectory Captioning
                 TASK EXPLANATION:   This question requires the student to summarize your movement route in the video by combining the specific objects along the way. Proper answer should be a concise summary of your movement route, including its starting location, final destination and specific buildings, objects along the way.
                 TEMPLATE Question:  Summarize your [movement route] in the video by combining the [specific objects] along the way.
                 TEMPLATE Choices:   I go from [specific objects] to the [specific objects] by [specific movenments about specific objects].
@@ -110,7 +110,7 @@ def make_prompt(question_category, destination, movements, object_list):
                                     E.  I go from  [between two tall skyscrapers] to the [the balcony on the 30th floor] by flying straight across the opening ground below.
                 EXAMPLE Answer:     A
             
-            2.  Start/End
+            2.  Start/End Position
                 TASK EXPLANATION:   This question requires the student to identify your starting and ending points in the video. Proper answer should include the specific locations where you begins and ends its journey.
                 TEMPLATE Question:  Where are your starting point and ending point in the video?
                 TEMPLATE Choices:   I start at [specific location] and ends at [specific location].
@@ -295,7 +295,7 @@ if __name__ == '__main__':
         video_list = json.load(file)
 
     # Get the video files
-    for idx, video_info in enumerate(video_list[:], start=64):
+    for idx, video_info in enumerate(video_list[:], start=0):
         video_name = video_info["video_name"]
         destination = video_info["destination"]
 

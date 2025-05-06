@@ -8,7 +8,7 @@ import json
 # This script is used for generating multiple-choice questions (MCQs) of Goal Oriented Navigation Tasks for given videos using the Gemini model. For more detail of the Goal Oriented Navigation Tasks, please refer to our paper.
 
 question_categories = [
-    "Historical Trajectory",
+    "Trajectory Captioning",
     "Landmark Position",
     "Goal Detection",
     "Association",
@@ -39,9 +39,9 @@ def make_prompt(question_category, video_destination):
     """
 
     match question_category:
-        case "Historical Trajectory":
+        case "Trajectory Captioning":
             category_prompt =  f"""
-                To generate a Historical Trajectory question, let's begin thinking step by step.
+                To generate a Trajectory Captioning question, let's begin thinking step by step.
                 First, you should try to recall the objects and places that showed up, and also the actions you took.
                 Then, you should raise the question based on the video together with the objects, places and actions. 
                 This kind of question should follow this form:
