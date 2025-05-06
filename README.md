@@ -38,6 +38,8 @@ UrbanVideo-Bench.code/
 
 ### Running
 
+We provide a sample script, `run.py`, to run the dataset using an OpenAI-style API. Follow the steps below to configure and execute the script:
+
 1. Set the model name in `run.py`:
    ```python
    model = "your_model_name"
@@ -60,6 +62,8 @@ UrbanVideo-Bench.code/
 
 ### Evaluation
 
+The `eval.py` script is provided to evaluate the model's predictions. It extracts the options from the model's output and calculates the accuracy by comparing them to the ground truth.
+
 1. Modify the file path in `eval.py` to match the output file from `run.py`:
    ```python
    file_path = 'result/gpt-4o_output.csv'  # Replace with your output file path
@@ -72,6 +76,7 @@ UrbanVideo-Bench.code/
 
 3. The script compares predictions to ground truth and calculates accuracy. Results are saved to: `result/%s_acc.xlsx`
 
+*Note: The extraction method here is the simplest regular matching. However, the output of small-sized models often does not follow instructions. So it needs to be adjusted separately.*
 
 ## Citation
 If you use this project in your research, please cite the following paper:
