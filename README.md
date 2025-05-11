@@ -60,15 +60,33 @@ We provide three seperated scripts: Basic, Goal, and Route for generating questi
    ```
 
 
-Follow the steps below to configure and execute the script:
+Follow the steps below to configure and execute the script `question_generation/MCQ_generation_basic.py` (the other two are similar):
 
-1. Set your Gemini API and select the appropriate model version.
+1. Set your Gemini API key and select the appropriate model version:
+   ```python
+   model = "gemini-1.5-flash"
+   genai.configure(api_key="SET_YOUR_API_KEY_HERE")
+   ```
 
 2. Configure the input and output paths:
    - **Input Path**: Specify the folder path containing `video_list.json` and the `.MP4` videos to be processed.
+   ```python
+   video_path = rf"DIRECT\PATH\TO\YOUR\VIDEO" # Replace with your video path. This path should contain video files with video_list.json.
+   ```
+   
+   ```
+   DIRECT\PATH\TO\YOUR\VIDEO/
+   ├── video_list.json
+   ├── video_1.mp4
+   ├── video_2.mp4
+   └── ...              # All the videos recorded in video_list.json
+   ```
    - **Output Path**: Specify the path to the `.CSV` file where the results will be saved.
+   ```python
+   MCQ_PATH = rf"DIRECT\PATH\TO\YOUR\MCQ\FILE.csv" # Set your output MCQ file here. 
+   ```
 
-3. Finally, execute the script by simply running the following command in the terminal:
+3. Finally, if you have set the direct path to your input and output files, you can execute the script by simply running the following command in the terminal:
    ```bash
    python MCQ_generation_basic.py
    ```
