@@ -320,7 +320,7 @@ if __name__ == '__main__':
                 time.sleep(5)
         except Exception as e:
             print(f"Error occured: {e}")
-            with open(r"\PATH\TO\ERROR\LOG\FILE", "a", encoding="utf-8") as f:
+            with open(r"error_log.txt", "a", encoding="utf-8") as f:
                 f.write(f"Error occurred when processing video: {video_file_name}, Error: {e}\n")
             time.sleep(10)
         
