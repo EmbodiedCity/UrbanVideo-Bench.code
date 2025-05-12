@@ -9,7 +9,7 @@ The benchmark is designed to evaluate whether video-large language models (Video
 ## News
 ✅ Dataset Upload
 
-✅ Dataset generation code (To be completed)
+✅ Dataset generation code
 
 ✅ Example code for running the benchmark with Video-LLMs
 
@@ -18,7 +18,6 @@ The pipeline includes four steps: video curation, MCQ generation, blind filterin
 The dataset statistics are shown in the following figure b-f.
 ![UrbanVideo-Bench.code](flowchart.png)
 
-### Generation
 
 We provide three seperated scripts: Basic, Goal, and Route for generating questions with Gemini, as the workflows are slightly different due to differences in the forms of input data and features of tasks:
 
@@ -88,7 +87,7 @@ Follow the steps below to configure and execute the script `question_generation/
 
 3. Finally, if you have set the direct path to your input and output files, you can execute the script by simply running the following command in the terminal:
    ```bash
-   python MCQ_generation_basic.py
+   python question_generation/MCQ_generation_basic.py
    ```
    The results will be saved to the specified file.
 
@@ -100,21 +99,14 @@ and place it in the `dataset` folder within the project directory.
 After downloading, ensure the folder structure matches the one described below.
 ```
 UrbanVideo-Bench.code/
-├── question_generation/      # Contains scripts for generating different categories of MCQs
-│   ├── MCQ_generation_basic.py
-│   ├── MCQ_generation_goal.py
-│   └── MCQ_generation_route.py
 ├── dataset/
-│   ├── videos/               # Contains video files used as input for the model
-│   │   ├── video_list.json   # Contains names and required info of all videos
-│   │   ├── videos            # All video files
-│   │   └── ...
-│   ├── MCQ.parquet           # Contains multiple-choice questions
+│   ├── videos/          # Contains video files used as input for the model
+│   ├── MCQ.parquet      # Contains multiple-choice questions
 │   └── ...
-├── run.py                    # Script for running the model and generating predictions
-├── eval.py                   # Script for evaluating the model's predictions
-├── README.md                 # Documentation for the project
-└── ...                       # Other potential files or subdirectories
+├── run.py               # Script for running the model and generating predictions
+├── eval.py              # Script for evaluating the model's predictions
+├── README.md            # Documentation for the project
+└── ...                  # Other potential files or subdirectories
 ```
 
 
