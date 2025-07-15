@@ -155,6 +155,11 @@ The `eval.py` script is provided to evaluate the model's predictions. It extract
 *Note: The extraction method here is the simplest regular matching. However, the output of small-sized models often does not follow instructions. So it needs to be adjusted separately.*
 
 
+## Acknowledgements
+
+We would like to express our sincere gratitude to [ZhanxyR](https://github.com/ZhanxyR) for the valuable contribution to the VLMEvalKit library in the [project](https://github.com/ZhanxyR/UrbanVideo-to-tsv), which has further improved the usability of this project. Thank you for your efforts and dedication!
+
+
 ## Citation
 
 If you use this project in your research, please cite the following paper:
