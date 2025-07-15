@@ -7,6 +7,8 @@ The benchmark is designed to evaluate whether video-large language models (Video
 - **Dataset**: https://huggingface.co/datasets/EmbodiedCity/UrbanVideo-Bench
 
 ## News
+🎉 Accepted as an oral presentation at ACL 2025!
+
 ✅ Dataset Upload
 
 ✅ Dataset generation code
