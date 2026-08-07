@@ -165,13 +165,31 @@ We would like to express our sincere gratitude to [ZhanxyR](https://github.com/Z
 If you use this project in your research, please cite the following paper:
 
 ```
-@misc{zhao2025urbanvideobench,
-      title={UrbanVideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces}, 
-      author={Baining Zhao and Jianjie Fang and Zichao Dai and Ziyou Wang and Jirong Zha and Weichen Zhang and Chen Gao and Yue Wang and Jinqiang Cui and Xinlei Chen and Yong Li},
-      year={2025},
-      eprint={2503.06157},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2503.06157}, 
+@inproceedings{zhao-etal-2025-urbanvideo,
+    title = "{U}rban{V}ideo-Bench: Benchmarking Vision-Language Models on Embodied Intelligence with Video Data in Urban Spaces",
+    author = "Zhao, Baining  and
+      Fang, Jianjie  and
+      Dai, Zichao  and
+      Wang, Ziyou  and
+      Zha, Jirong  and
+      Zhang, Weichen  and
+      Gao, Chen  and
+      Wang, Yue  and
+      Cui, Jinqiang  and
+      Chen, Xinlei  and
+      Li, Yong",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.1558/",
+    doi = "10.18653/v1/2025.acl-long.1558",
+    pages = "32400--32423",
+    ISBN = "979-8-89176-251-0"
 }
 ```
